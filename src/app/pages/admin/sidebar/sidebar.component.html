@@ -1,0 +1,31 @@
+<nav class="nav flex-column">
+    <a class="nav-link text-dark fs-5">Menu</a>
+    <a class="nav-link text-dark" [routerLink]="['/admin']">
+        <i class="fa-solid fa-house py-3 mx-1"></i>
+        Home
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['/admin/profile']">
+        <i class="fa-solid fa-user py-3 fa-lg mx-1"></i>
+        Profile
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['/admin/categories']">
+        <i class="fa-solid fa-rectangle-list fa-lg py-3 mx-1"></i>
+        Categories
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['/admin/add-category']">
+        <i class="fa-solid fa-circle-plus fa-lg py-3 mx-1"></i>
+        Add Categories
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['/admin/view-quiz']">
+        <i class="fa-solid fa-circle-question fa-lg py-3 mx-1"></i>
+        Quiz
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['/admin/add-quiz']">
+        <i class="fa-solid fa-clipboard-question fa-lg py-3 mx-1"></i>
+        Add Quiz
+    </a>
+    <a class="nav-link text-dark" [routerLink]="['']">
+        <i class="fa-solid fa-arrow-right-from-bracket fa-lg py-3 mx-1"></i>
+        Logout
+    </a>
+</nav>

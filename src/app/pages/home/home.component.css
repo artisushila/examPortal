@@ -1,0 +1,11 @@
+.img {
+    background-repeat: no-repeat;
+    background-image: url('https://raw.githubusercontent.com/artisushila/careerinfotech/main/img/bg1.png');
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.btn {
+    border-radius: 25px !important;
+}

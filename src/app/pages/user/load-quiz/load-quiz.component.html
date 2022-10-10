@@ -1,0 +1,35 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col-md-12">
+        <div class="card" *ngIf="getQuiz">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card-body" *ngFor="let getq of getQuiz">
+                        <h3 class="card-title">
+                            <i class="fa-solid fa-lightbulb mt-5 mx-2"></i>
+                            <b>{{getq.title}}</b>
+                        </h3>
+                        <p class="card-text">{{getq.category.title}}</p>
+                        <p class="card-text"><small>{{getq.description}}</small></p>
+                        <div class="row d-flex mb-3">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-outline-secondary">View</button>
+                                <button type="submit" class="btn btn-outline-secondary mx-2"
+                                    [routerLink]="'/user/instruction/'+getq.qId">Start</button>
+                                <button type="submit" class="btn btn-outline-secondary">Question
+                                    :{{getq.numberOfQuestion}}</button>
+                                <button type="submit" class="btn btn-outline-secondary mx-2">Marks
+                                    :{{getq.maxMarks}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="getQuiz.length == 0">
+                <div class="col-md-12 text-center">
+                    <h1>Sorry Here is NO Quiz Question !!!!</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

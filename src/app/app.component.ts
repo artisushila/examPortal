@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'examfront';
+  title = 'TestYouSelf';
+  msg: any;
+  onBlurEvent(event: any) {
+    this.msg = event.target.value + "";
+    console.log(this.msg);
+
+  }
+
+
 }

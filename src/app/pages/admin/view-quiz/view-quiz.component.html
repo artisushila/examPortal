@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h3 class="p-3">All Quiz are Here !!</h3>
+                <div class="card border-success mb-3" *ngFor="let q of quizzes">
+                    <div class="row">
+                        <div class="col-md-3 text-center mt-5 p-0">
+                            <!-- <i class='bx bxs-book-reader bx-md'></i> -->
+                            <!-- <img class="w-25" src="" alt=""> -->
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">{{q.title}}</h5>
+                                <p class="card-text"><small class="text-muted">{{q.category.title}}</small></p>
+                                <p class="card-text">{{q.description}}</p>
+                                <button type="submit" class="btn btn-outline-dark"
+                                    [routerLink]="'/admin/question/'+ q.qId +'/'+ q.title">Question</button>
+                                <button type="submit" class="btn btn-outline-dark mx-2" title="Total Marks">
+                                    <i class="fa-solid fa-medal"></i>{{q.maxMarks}}
+                                </button>
+                                <button type="submit" class="btn btn-outline-dark" title="Total Number of Question">
+                                    <i class='bx bxl-quora'></i>{{q.numberOfQuestion}}
+                                </button>
+                                <button type="submit" class="btn btn-outline-dark mx-2"
+                                    [routerLink]="'/admin/quiz/'+q.qId">Update</button>
+                                <button type="submit" class="btn btn-outline-dark">Attempts</button>
+                                <button type="submit" class="btn" (click)="deleteQuiz(q.qId)"><i
+                                        class="fa-solid fa-trash-can fa-2xl"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex">
+                    <div class="col-md-12 text-center mb-3">
+                        <button type="submit" class="btn btn-outline-secondary" [routerLink]="['/admin/add-quiz']">Add
+                            New Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

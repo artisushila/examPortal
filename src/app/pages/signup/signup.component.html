@@ -1,0 +1,53 @@
+<div class="container-fluid my-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card px-5 py-2">
+
+                <p class="h3 text-center text-light">Registration Here !!</p>
+
+                <form class="row g-3" (ngSubmit)="formsubmit()">
+
+                    <div class="col-12">
+                        <label class="form-label">User Name</label>
+                        <input type="text" required class="form-control" data-bs-toggle="tooltip"
+                            title="user name must be unique" name="username" [(ngModel)]="user.username">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Password</label>
+                        <input type="password" required class="form-control" name="password"
+                            [(ngModel)]="user.password">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">First Name</label>
+                        <input type="text" required class="form-control" name="firstName" [(ngModel)]="user.firstName">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" required class="form-control" name="lastName" [(ngModel)]="user.lastName">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Email</label>
+                        <input type="email" required class="form-control" name="email" [(ngModel)]="user.email">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Phone</label>
+                        <input type="number" required class="form-control" name="phone" [(ngModel)]="user.phone">
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success">SIGN UP</button>
+                    </div>
+
+                    <div class="col-6">
+                        <button type="reset" class="btn btn-primary">CLEAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

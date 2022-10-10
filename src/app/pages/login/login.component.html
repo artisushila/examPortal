@@ -1,0 +1,27 @@
+<div class="container-fluid my-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+            <div class="card p-5">
+                <form class="row g-3" (ngSubmit)="formlogin()">
+                    <p class="h3 text-center text-light">Login Here !!</p>
+                    <div class="col-12">
+                        <label class="form-label">User Name</label>
+                        <input type="text" required class="form-control" data-bs-toggle="tooltip"
+                            title="user name must be unique" name="username" [(ngModel)]="loginData.username">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">User Password</label>
+                        <input type="password" required class="form-control" name="password"
+                            [(ngModel)]="loginData.password">
+                    </div>
+                    <div class="col-6 d-flex justify-content-end mt-5">
+                        <button type="submit" class="btn btn-success">LOGIN</button>
+                    </div>
+                    <div class="col-6 mt-5">
+                        <button type="reset" class="btn btn-primary">RESET</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

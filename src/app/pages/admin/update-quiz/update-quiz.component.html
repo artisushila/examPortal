@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h4 class="p-3">Update Quiz Here !!</h4>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form *ngIf="quiz" (ngSubmit)="updateForm()">
+                            <div class="form-floating mb-3">
+                                <input type="text" [(ngModel)]="quiz.title" class="form-control border-success"
+                                    name="title" placeholder="programming language">
+                                <label>Enter Title</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea type="text" [(ngModel)]="quiz.description" class="form-control border-success"
+                                    rows="5" name="description" placeholder="description"></textarea>
+                                <label>Enter Description</label>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" [(ngModel)]="quiz.maxMarks"
+                                            class="form-control border-success" name="maxMarks"
+                                            placeholder="programming language">
+                                        <label>Enter Maximum Marks</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" [(ngModel)]="quiz.numberOfQuestion"
+                                            class="form-control border-success" name="numberOfQuestion"
+                                            placeholder="programming language">
+                                        <label>Enter Number of Question</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input name="active" [(ngModel)]="quiz.active"
+                                            class="form-check-input border-success" type="checkbox">
+                                        <label class="form-check-label">Publish Status</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-md-12">
+                                    <select class="form-select form-select-lg border-success" name="category"
+                                        [(ngModel)]="quiz.category.cid">
+                                        <option selected>Select Categorise from Here</option>
+                                        <option *ngFor="let c of categor" [value]="c.cid">{{c.title}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row d-flex">
+                                <div class="col-md-12 text-center mt-2 mb-4">
+                                    <button type="submit" class="btn btn-outline-secondary">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

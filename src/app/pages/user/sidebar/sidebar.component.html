@@ -1,0 +1,11 @@
+<nav class="nav flex-column">
+    <a class="nav-link text-dark fs-5">All Categories</a>
+    <a class="nav-link text-dark" routerLink="/user/0">
+        <i class="fa-solid fa-house py-3 mx-1"></i>
+        All Quizzes
+    </a>
+    <a class="nav-link text-dark" [routerLink]="'/user/'+c.cid" *ngFor="let c of category">
+        <i class="fa-solid fa-lightbulb py-3 mx-1 fa-lg"></i>
+        {{c.title}}
+    </a>
+</nav>

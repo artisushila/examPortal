@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h4 class="p-3">Update Category Here !!</h4>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form *ngIf="category" (ngSubmit)="updateForm()">
+                            <div class="form-floating mb-3">
+                                <input type="text" [(ngModel)]="category.title" class="form-control border-success"
+                                    name="title" placeholder="programming language">
+                                <label>Enter Title</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea type="text" [(ngModel)]="category.description"
+                                    class="form-control border-success" rows="5" name="description"
+                                    placeholder="description"></textarea>
+                                <label>Enter Description</label>
+                            </div>
+                            <div class="row d-flex">
+                                <div class="col-md-12 text-center my-4">
+                                    <button type="submit" class="btn btn-outline-secondary">Update Category
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

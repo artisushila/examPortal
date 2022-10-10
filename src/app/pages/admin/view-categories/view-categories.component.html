@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-3" *ngFor="let c of categories">
+                <h4 class="px-3 pt-3 mb-5">All Categories</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-flex flex-column bd-highlight mb-3">
+                            <div class="mx-3 bd-highlight h5">
+                                <i class='bx bxs-customize'></i>
+                                {{c.title}}
+                            </div>
+                            <div class="mx-3 bd-highlight">{{c.description}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <button type="submit" class="btn btn-outline-secondary mx-2"
+                            [routerLink]="'/admin/category/'+c.cid">
+                            Update
+                        </button>
+                        <button type="submit" class="btn mx-2" data-bs-target="tooltip" title="Add New Category"
+                            [routerLink]="['/admin/add-category']"><i class="fa-solid fa-circle-plus fa-2xl"></i>
+                        </button>
+                        <button type="submit" class="btn" data-bs-target="tooltip" title="Dlete Qusetion"
+                            (click)="deleteCategory(c.cid)"><i class="fa-solid fa-trash-can fa-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

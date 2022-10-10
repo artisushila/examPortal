@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h3 class="p-3"><i class='bx bxs-edit-alt'></i> {{qtitle}}</h3>
+                <div class="card-body">
+                    <form (ngSubmit)="addQusetion()">
+                        <div class="form-floating mb-3">
+                            <textarea type="text" style="height: 100px" name="content" [(ngModel)]="qusetion.content"
+                                class="form-control border-success" placeholder="com" required></textarea>
+                            <label>Enter Qusetion Description Here...</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="option1" [(ngModel)]="qusetion.option1"
+                                        class="form-control border-success" placeholder="name@example.com" required>
+                                    <label>option1</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="option2" [(ngModel)]="qusetion.option2"
+                                        class="form-control border-success" placeholder="name@example.com" required>
+                                    <label>option2</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="option3" [(ngModel)]="qusetion.option3"
+                                        class="form-control border-success" placeholder="name@example.com" required>
+                                    <label>option3</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="option4" [(ngModel)]="qusetion.option4"
+                                        class="form-control border-success" placeholder="name@example.com" required>
+                                    <label>option4</label>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-md-12">
+                                    <div class="form-floating" name="">
+                                        <select class="form-select border-success" name="answer"
+                                            [(ngModel)]="qusetion.answer" required>
+                                            <option [value]="qusetion.option1" *ngIf="qusetion.option1">
+                                                {{qusetion.option1}}
+                                            </option>
+                                            <option [value]="qusetion.option2" *ngIf="qusetion.option2">
+                                                {{qusetion.option2}}
+                                            </option>
+                                            <option [value]="qusetion.option3" *ngIf="qusetion.option3">
+                                                {{qusetion.option3}}
+                                            </option>
+                                            <option [value]="qusetion.option4" *ngIf="qusetion.option4">
+                                                {{qusetion.option4}}
+                                            </option>
+                                        </select>
+                                        <label>Select Correct Answer</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex mt-3">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "0bb3716e-a031-449f-a1d2-f17a2f3e2a42",
+		"name": "oems",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1914658"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"nikita123\",\r\n    \"password\":\"Nikita@123\",\r\n    \"firstname\":\"nikita\",\r\n    \"lastname\":\"Khatal\",\r\n    \"email\":\"nikita@gmail.com\",\r\n    \"phone\":\"9988776655\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/user/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"nikita123\",\r\n    \"password\":\"Nikita@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/generate-token",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"generate-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Username",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaWtpdGExMjMiLCJleHAiOjE2NjIzOTI1NjMsImlhdCI6MTY2MjM1NjU2M30.OcnEqdcd1znclcsjUGodqnem2bDItfCPcqnyOtrdpyc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/user/nikita123",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"user",
+								"nikita123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/user/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Add Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Java Quiz\",\r\n    \"description\": \"This is Java Quiz\",\r\n    \"maxMarks\": 100,\r\n    \"numberOfQuestions\": 10,\r\n    \"active\": false\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/quiz/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Quizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quiz",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quiz by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Quiz by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quizzes Of Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/category/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Quizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/active",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Quizes by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/quiz/category/active/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"quiz",
+								"category",
+								"active",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Add Question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"\",\r\n    \"image\":\"\",\r\n    \"option1\":\"\",\r\n    \"option2\":\"\",\r\n    \"option3\":\"\",\r\n    \"option4\":\"\",\r\n    \"answer\":\"\",\r\n    \"givenAnswer\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/question/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"\",\r\n    \"image\":\"\",\r\n    \"option1\":\"\",\r\n    \"option2\":\"\",\r\n    \"option3\":\"\",\r\n    \"option4\":\"\",\r\n    \"answer\":\"\",\r\n    \"givenAnswer\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/question/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Questions by Quiz Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/question/quiz/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Direct Submit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/question/direct-quiz",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								"direct-quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Question by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/question/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Question by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/question/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"question",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Programming\",\r\n    \"description\": \"This category contains all the quizes related to the programming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/category/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Programming Category\",\r\n    \"description\": \"This category contains all the quizes related to the programming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/category/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/category/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/category/",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/category/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Generate Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/generate-token",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"generate-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/current-user",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2YWliaGF2MjMyNCIsImV4cCI6MTY1NTA2MjA4NywiaWF0IjoxNjU1MDI2MDg3fQ.7cT5u9Ha3_MITkfpZleHpPc2Dmj-HmFZfb9AjRefmKM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://43.205.181.109:9999",
+			"type": "string"
+		}
+	]
+}
